@@ -3,39 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نوار یادبود دی ۱۴۰۴ | پروژه همبستگی ملی</title>
+    <title>نوار یادبود درگذشتگان دی ۱۴۰۴</title>
     <link rel="stylesheet" href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css">
     <style>
-        /* روبان در این صفحه (همان کد loader.js اما داخلی) */
+        /* روبان مورب در این صفحه */
         #memorial-ribbon {
             position: fixed;
-            top: 0;
-            right: 0;
+            top: 40px;
+            right: -40px;
             z-index: 999999;
-            background: #000000;
+            width: 150px;
+            height: 40px;
+            background: linear-gradient(to bottom left, #000000 0%, #333333 50%, #000000 100%);
             color: #ffffff;
             text-decoration: none;
             font-family: 'Vazir', Tahoma, sans-serif;
             font-weight: 500;
             text-align: center;
-            padding: 12px 0 20px 0;
-            width: 200px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+            line-height: 40px;
+            transform: rotate(45deg);
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
             transition: all 0.3s ease;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
             border: none;
             outline: none;
-            display: block;
-            line-height: 1.4;
         }
+        
         #memorial-ribbon:hover {
-            background: #222222;
-            padding-top: 14px;
+            background: linear-gradient(to bottom left, #222222 0%, #444444 50%, #222222 100%);
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.6);
+            transform: rotate(45deg) scale(1.05);
         }
-        .ribbon-text { display: block; font-size: 15px; padding: 2px 0; }
-        .ribbon-year { display: block; font-size: 16px; font-weight: 700; padding: 2px 0; margin-top: 2px; }
+        
+        .ribbon-text {
+            display: block;
+            transform: rotate(-45deg);
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            line-height: 1.3;
+        }
         
         /* استایل صفحه */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -44,23 +55,52 @@
             line-height: 1.8;
             background: #f8f9fa;
             color: #333;
-            padding-top: 60px;
+            padding: 20px;
+            min-height: 100vh;
         }
+        
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 30px;
+            padding: 20px;
         }
+        
         header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px 40px;
             background: linear-gradient(135deg, #000 0%, #222 100%);
             color: white;
             margin-bottom: 40px;
-            border-radius: 0 0 20px 20px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
         }
-        h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        .tagline { font-size: 1.2rem; opacity: 0.9; }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            transform: rotate(45deg);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
         
         .card {
             background: white;
@@ -69,90 +109,200 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             margin-bottom: 30px;
             border-right: 5px solid #000;
+            position: relative;
+            transition: transform 0.3s ease;
         }
-        h2 { color: #000; margin-bottom: 20px; font-size: 1.8rem; }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #000;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
         
         .code-box {
             background: #272822;
             color: #f8f8f2;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
             font-family: 'Courier New', monospace;
-            margin: 20px 0;
+            margin: 25px 0;
             position: relative;
             direction: ltr;
             text-align: left;
             overflow-x: auto;
+            font-size: 15px;
+            line-height: 1.5;
+            border-left: 5px solid #4CAF50;
+        }
+        
+        .code-box::before {
+            content: '📋';
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            font-size: 20px;
         }
         
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: #000;
+            gap: 12px;
+            background: linear-gradient(to right, #000 0%, #333 100%);
             color: white;
-            padding: 14px 28px;
+            padding: 15px 30px;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-family: 'Vazir';
             font-size: 16px;
+            font-weight: 500;
             cursor: pointer;
             text-decoration: none;
             margin: 10px 5px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
+        
         .btn:hover {
-            background: #222;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            background: linear-gradient(to right, #222 0%, #444 100%);
         }
-        .btn-copy { background: #4CAF50; }
-        .btn-copy:hover { background: #45a049; }
-        .btn-download { background: #2196F3; }
-        .btn-download:hover { background: #1976D2; }
+        
+        .btn-copy {
+            background: linear-gradient(to right, #4CAF50 0%, #45a049 100%);
+        }
+        
+        .btn-download {
+            background: linear-gradient(to right, #2196F3 0%, #1976D2 100%);
+        }
+        
+        .btn-html {
+            background: linear-gradient(to right, #FF9800 0%, #F57C00 100%);
+        }
         
         .notification {
             position: fixed;
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            background: #4CAF50;
+            background: linear-gradient(to right, #4CAF50, #45a049);
             color: white;
-            padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            padding: 18px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             z-index: 1000000;
             display: none;
+            font-weight: 500;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .demo-container {
+            position: relative;
+            height: 150px;
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            margin: 25px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .demo-ribbon {
+            position: absolute;
+            top: 30px;
+            right: -40px;
+            width: 120px;
+            height: 35px;
+            background: linear-gradient(to bottom left, #000 0%, #333 50%, #000 100%);
+            color: white;
+            font-family: 'Vazir';
+            font-size: 11px;
+            text-align: center;
+            line-height: 35px;
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+        }
+        
+        .demo-ribbon span {
+            transform: rotate(-45deg);
+            line-height: 1.3;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 4px solid #000;
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 15px;
         }
         
         @media (max-width: 768px) {
-            .container { padding: 20px; }
+            .container { padding: 10px; }
             h1 { font-size: 2rem; }
-            #memorial-ribbon { width: 160px; }
-            .ribbon-text { font-size: 13px; }
-            .ribbon-year { font-size: 14px; }
+            .tagline { font-size: 1.1rem; }
+            .card { padding: 20px; }
+            #memorial-ribbon {
+                width: 120px;
+                height: 35px;
+                top: 30px;
+                right: -30px;
+            }
+            .ribbon-text { font-size: 11px; }
+            .features { grid-template-columns: 1fr; }
+            .btn { padding: 12px 20px; font-size: 14px; }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- روبان روی همین صفحه -->
-    <a href="#" id="memorial-ribbon">
-        <span class="ribbon-text">به یاد درگذشتگان</span>
-        <span class="ribbon-year">دی ۱۴۰۴</span>
+    <!-- روبان مورب روی همین صفحه -->
+    <a href="#" id="memorial-ribbon" onclick="scrollToTop()">
+        <span class="ribbon-text">به یاد درگذشتگان<br><strong style="font-size:12px;">دی ۱۴۰۴</strong></span>
     </a>
     
     <!-- اعلان -->
     <div class="notification" id="notification"></div>
     
     <header>
-        <h1>نوار یادبود دی ۱۴۰۴</h1>
-        <p class="tagline">پروژه همبستگی ملی - فقط با یک خط کد در سایت خود مشارکت کنید</p>
+        <h1>نوار یادبود مورب دی ۱۴۰۴</h1>
+        <p class="tagline">پروژه همبستگی ملی - با یک خط کد در سایت خود مشارکت کنید</p>
+        
+        <div class="demo-container">
+            <div class="demo-ribbon">
+                <span>به یاد درگذشتگان<br><strong>دی ۱۴۰۴</strong></span>
+            </div>
+        </div>
     </header>
     
     <div class="container">
-        <!-- کارت ۱: کد فوق‌کوتاه -->
+        <!-- کارت ۱: روش سریع -->
         <div class="card">
-            <h2>🚀 روش سریع (توصیه شده)</h2>
+            <h2><i class="fas fa-bolt"></i> روش سریع (توصیه شده)</h2>
             <p>فقط این یک خط کد را در بخش <code>&lt;body&gt;</code> سایت خود قرار دهید:</p>
             
             <div class="code-box" id="shortCode">
@@ -160,80 +310,128 @@
             </div>
             
             <button class="btn btn-copy" onclick="copyCode('shortCode')">
-                📋 کپی کد یک خطی
+                <i class="far fa-copy"></i> کپی کد یک خطی
             </button>
             
-            <p style="margin-top: 15px; color: #666;">
-                با این روش، نوار به صورت خودکار با آخرین به‌روزرسانی‌ها نمایش داده می‌شود.
-            </p>
+            <div style="margin-top: 20px; padding: 15px; background: #f0f8ff; border-radius: 8px;">
+                <p><strong>مزایای این روش:</strong></p>
+                <ul style="padding-right: 20px;">
+                    <li>به‌روزرسانی خودکار از گیت‌هاب</li>
+                    <li>بدون تأثیر بر سرعت سایت</li>
+                    <li>هماهنگی با همه قالب‌ها</li>
+                </ul>
+            </div>
         </div>
         
         <!-- کارت ۲: پلاگین وردپرس -->
         <div class="card">
-            <h2>🖥️ برای سایت‌های وردپرسی</h2>
-            <p>پلاگین ساده وردپرس - فقط فعال کنید.</p>
+            <h2><i class="fab fa-wordpress"></i> برای سایت‌های وردپرسی</h2>
+            <p>پلاگین ساده - فقط فعال کنید و روبان نمایش داده می‌شود.</p>
             
             <div class="code-box">
-📁 memorial-ribbon-plugin.zip
-├── memorial-ribbon.php
-└── readme.txt
+# پلاگین وردپرس نوار یادبود مورب دی ۱۴۰۴
+
+📁 memorial-ribbon.php
+├── نام: نوار یادبود مورب دی ۱۴۰۴
+├── نسخه: 2.0
+├── نیاز به تنظیمات: خیر
+└── فقط فعال کنید
             </div>
             
             <button class="btn btn-download" onclick="downloadPlugin()">
-                ⬇️ دانلود پلاگین (ZIP)
+                <i class="fas fa-download"></i> دانلود پلاگین
             </button>
             
-            <p style="margin-top: 15px;">
-                پس از نصب و فعال‌سازی، نوار به صورت خودکار در سایت شما نمایش داده می‌شود.
+            <p style="margin-top: 15px; color: #666;">
+                پس از نصب، پلاگین را فعال کنید. هیچ تنظیماتی نیاز نیست.
             </p>
         </div>
         
         <!-- کارت ۳: کد کامل HTML -->
         <div class="card">
-            <h2>🔧 کد کامل HTML (بدون وابستگی)</h2>
-            <p>برای مواقعی که نمی‌خواهید از فایل خارجی استفاده کنید:</p>
+            <h2><i class="fas fa-code"></i> کد کامل HTML</h2>
+            <p>برای سایت‌هایی که نمی‌خواهند از فایل خارجی استفاده کنند:</p>
             
             <div class="code-box" id="fullCode">
+&lt;!-- نوار یادبود مورب دی ۱۴۰۴ --&gt;
 &lt;a href="https://m4tinbeigi-official.github.io/memorial-ribbon/" 
-   style="position:fixed;top:0;right:0;z-index:999999;background:#000;color:#fff;text-decoration:none;font-family:'Vazir',sans-serif;font-weight:500;text-align:center;padding:12px 0 20px 0;width:200px;box-shadow:0 4px 15px rgba(0,0,0,0.25);transition:all 0.3s;clip-path:polygon(0 0,100% 0,100% 100%,0 85%);-webkit-clip-path:polygon(0 0,100% 0,100% 100%,0 85%);cursor:pointer;"
+   style="position:fixed;top:40px;right:-40px;z-index:999999;width:150px;height:40px;background:linear-gradient(to bottom left, #000 0%, #333 50%, #000 100%);color:#fff;text-decoration:none;font-family:'Vazir',sans-serif;text-align:center;line-height:40px;transform:rotate(45deg);box-shadow:3px 3px 10px rgba(0,0,0,0.5);transition:all 0.3s;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;"
    target="_blank" 
    rel="noopener" 
    title="به یاد درگذشتگان دی ۱۴۰۴"&gt;
-    &lt;span style="display:block;font-size:15px;padding:2px 0;"&gt;به یاد درگذشتگان&lt;/span&gt;
-    &lt;span style="display:block;font-size:16px;font-weight:700;padding:2px 0;margin-top:2px;"&gt;دی ۱۴۰۴&lt;/span&gt;
+    &lt;span style="display:block;transform:rotate(-45deg);font-size:13px;line-height:1.3;"&gt;
+        به یاد درگذشتگان&lt;br&gt;&lt;strong style="font-size:12px;"&gt;دی ۱۴۰۴&lt;/strong&gt;
+    &lt;/span&gt;
 &lt;/a&gt;
 &lt;link rel="stylesheet" href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css"&gt;
             </div>
             
-            <button class="btn btn-copy" onclick="copyCode('fullCode')">
-                📋 کپی کد کامل
+            <button class="btn btn-html" onclick="copyCode('fullCode')">
+                <i class="far fa-copy"></i> کپی کد کامل HTML
             </button>
         </div>
         
-        <!-- کارت ۴: اطلاعات -->
+        <!-- کارت ۴: ویژگی‌ها -->
         <div class="card">
-            <h2>ℹ️ درباره پروژه</h2>
-            <p>این پروژه با هدف ایجاد یک نماد دیجیتال برای یادبود و همبستگی ملی ایجاد شده است.</p>
+            <h2><i class="fas fa-star"></i> ویژگی‌های نوار</h2>
             
-            <h3 style="margin-top: 20px;">🎯 ویژگی‌ها:</h3>
-            <ul style="padding-right: 20px; margin: 15px 0;">
-                <li>کمترین تأثیر بر سرعت سایت</li>
-                <li>واکنش‌گرا و مناسب موبایل</li>
-                <li>بدون نیاز به کتابخانه‌های خارجی</li>
-                <li>رایگان و متن‌باز</li>
-            </ul>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-palette"></i>
+                    <h3>طراحی مورب</h3>
+                    <p>طرح کلاسیک روبان‌های یادبود با گرادیانت مشکی</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>واکنش‌گرا</h3>
+                    <p>سازگار با همه دستگاه‌های موبایل و تبلت</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <h3>سبک و سریع</h3>
+                    <p>بدون تأثیر بر سرعت بارگذاری سایت</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-language"></i>
+                    <h3>هوشمند</h3>
+                    <p>تشخیص خودکار جهت نوشتار (RTL/LTR)</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- کارت ۵: مشارکت -->
+        <div class="card">
+            <h2><i class="fas fa-share-alt"></i> دعوت به مشارکت</h2>
+            <p>با قرار دادن این نوار در سایت خود، در این حرکت همبستگی ملی مشارکت کنید.</p>
             
-            <h3>🔗 لینک‌های مهم:</h3>
-            <p>
-                <a href="https://github.com/m4tinbeigi-official/memorial-ribbon" class="btn" target="_blank" style="background: #333;">
-                    گیت‌هاب پروژه
-                </a>
-                <a href="https://github.com/m4tinbeigi-official/memorial-ribbon/issues" class="btn" target="_blank" style="background: #555;">
-                    گزارش مشکل
-                </a>
+            <div style="text-align: center; margin: 25px 0;">
+                <button class="btn" onclick="shareOnTwitter()" style="background: linear-gradient(to right, #1DA1F2, #0d8bda);">
+                    <i class="fab fa-twitter"></i> اشتراک در توییتر
+                </button>
+                
+                <button class="btn" onclick="shareOnTelegram()" style="background: linear-gradient(to right, #0088cc, #006699);">
+                    <i class="fab fa-telegram"></i> اشتراک در تلگرام
+                </button>
+            </div>
+            
+            <p style="text-align: center; color: #666;">
+                هشتگ‌ها: <strong>#یادبود_دی۱۴۰۴ #نوار_مورب #همبستگی_ملی</strong>
             </p>
         </div>
     </div>
+    
+    <footer style="text-align: center; padding: 40px 20px; color: #666; border-top: 2px solid #eee; margin-top: 40px;">
+        <p>پروژه نوار یادبود مورب دی ۱۴۰۴</p>
+        <p>این پروژه به صورت متن‌باز و رایگان در اختیار عموم قرار دارد.</p>
+        <p style="margin-top: 20px;">
+            <a href="https://github.com/m4tinbeigi-official/memorial-ribbon" style="color: #333; text-decoration: none; margin: 0 10px;">
+                <i class="fab fa-github"></i> گیت‌هاب
+            </a>
+        </p>
+    </footer>
     
     <script>
         // تابع کپی کد
@@ -251,17 +449,28 @@
         
         // تابع دانلود پلاگین
         function downloadPlugin() {
-            // ایجاد فایل ZIP مجازی برای پلاگین
             const pluginContent = `<?php
 /**
- * Plugin Name: نوار یادبود دی ۱۴۰۴
+ * Plugin Name: نوار یادبود مورب دی ۱۴۰۴
  * Plugin URI: https://m4tinbeigi-official.github.io/memorial-ribbon/
- * Description: نمایش نوار یادبود سه‌گوش "به یاد درگذشتگان دی ۱۴۰۴"
- * Version: 1.0
+ * Description: نمایش نوار یادبود مورب "به یاد درگذشتگان دی ۱۴۰۴"
+ * Version: 2.0
  * Author: پروژه یادبود دی ۱۴۰۴
+ * License: GPL v2 or later
  */
+defined('ABSPATH') || exit;
+add_filter('plugin_action_links_' . plugin_basename(__FILE__), function($links) {
+    $settings_link = '<a href="https://m4tinbeigi-official.github.io/memorial-ribbon/" target="_blank">راهنما</a>';
+    array_unshift($links, $settings_link);
+    return $links;
+});
 add_action('wp_footer', function() {
-    echo '<script src="https://m4tinbeigi-official.github.io/memorial-ribbon/loader.js"><\\/script>';
+    if (!is_admin()) {
+        echo '<script src="https://m4tinbeigi-official.github.io/memorial-ribbon/loader.js"></script>';
+    }
+});
+add_action('admin_head', function() {
+    echo '<style>.memorial-ribbon { display: none !important; }</style>';
 });`;
             
             const blob = new Blob([pluginContent], { type: 'application/php' });
@@ -288,32 +497,62 @@ add_action('wp_footer', function() {
             }, 3000);
         }
         
+        // اسکرول به بالا
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // اشتراک‌گذاری
+        function shareOnTwitter() {
+            const url = 'https://m4tinbeigi-official.github.io/memorial-ribbon/';
+            const text = 'من نوار یادبود مورب دی ۱۴۰۴ را در سایت خود قرار دادم. شما هم مشارکت کنید:';
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+        }
+        
+        function shareOnTelegram() {
+            const url = 'https://m4tinbeigi-official.github.io/memorial-ribbon/';
+            const text = 'نوار یادبود مورب دی ۱۴۰۴ - پروژه همبستگی ملی';
+            window.open(`https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank');
+        }
+        
         // ریسپانسیو کردن روبان روی همین صفحه
         function adjustRibbon() {
             const ribbon = document.getElementById('memorial-ribbon');
             if (window.innerWidth <= 768) {
-                ribbon.style.width = '160px';
-                ribbon.innerHTML = `
-                    <span class="ribbon-text" style="font-size: 13px;">به یاد درگذشتگان</span>
-                    <span class="ribbon-year" style="font-size: 14px;">دی ۱۴۰۴</span>
-                `;
+                ribbon.style.width = '120px';
+                ribbon.style.height = '35px';
+                ribbon.style.top = '30px';
+                ribbon.style.right = '-30px';
+                ribbon.querySelector('.ribbon-text').innerHTML = 'به یاد درگذشتگان<br><strong style="font-size:10px;">دی ۱۴۰۴</strong>';
             } else {
-                ribbon.style.width = '200px';
-                ribbon.innerHTML = `
-                    <span class="ribbon-text" style="font-size: 15px;">به یاد درگذشتگان</span>
-                    <span class="ribbon-year" style="font-size: 16px;">دی ۱۴۰۴</span>
-                `;
+                ribbon.style.width = '150px';
+                ribbon.style.height = '40px';
+                ribbon.style.top = '40px';
+                ribbon.style.right = '-40px';
+                ribbon.querySelector('.ribbon-text').innerHTML = 'به یاد درگذشتگان<br><strong style="font-size:12px;">دی ۱۴۰۴</strong>';
             }
         }
         
         window.addEventListener('resize', adjustRibbon);
-        adjustRibbon();
         
-        // کلیک روی روبان در این صفحه
-        document.getElementById('memorial-ribbon').onclick = function(e) {
+        // جلوگیری از باز شدن لینک در همین صفحه
+        document.getElementById('memorial-ribbon').addEventListener('click', function(e) {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
+            scrollToTop();
+        });
+        
+        // کپی با کلیک روی کد
+        document.querySelectorAll('.code-box').forEach(box => {
+            box.addEventListener('click', function() {
+                const textArea = document.createElement('textarea');
+                textArea.value = this.textContent;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showNotification('✅ کد کپی شد!');
+            });
+        });
     </script>
 </body>
 </html>
