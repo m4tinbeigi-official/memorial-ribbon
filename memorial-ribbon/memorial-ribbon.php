@@ -32,11 +32,11 @@ function mr_display_ribbon() {
     $position_class = ($position === 'left') ? 'left-side' : 'right-side';
     
     echo '
-    <a href="https://m4tinbeigi-official.github.io/memorial-ribbon/" 
+    <a href="https://m4tinbeigi-official.github.io/memorial-ribbon" 
        class="memorial-ribbon ' . esc_attr($position_class) . '" 
        target="_blank" 
        rel="noopener noreferrer"
-       aria-label="یادبود درگذشتگان دی ۱۴۰۴ - لینک به پروژه گیت‌هاب">
+       aria-label="یادبود درگذشتگان دی ۱۴۰۴">
         <span class="ribbon-text">به یاد درگذشتگان دی ۱۴۰۴</span>
     </a>';
 }
