@@ -1,42 +1,216 @@
 <!DOCTYPE html>
-<html dir="rtl">
+<html dir="rtl" lang="fa">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نوار یادبود دی ۱۴۰۴ - سمت راست</title>
+    <link rel="stylesheet" href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css">
     <style>
-        @import url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css');
+        /* استایل نوار */
         #memorial-ribbon {
             position: fixed;
             top: 0;
             right: 0;
+            right: -1px;
             z-index: 999999;
-            background: #000;
-            color: #fff;
+            background: #000000;
+            color: #ffffff;
             text-decoration: none;
-            font-family: 'Vazir', tahoma;
-            font-size: 14px;
+            font-family: 'Vazir', Tahoma, sans-serif;
+            font-weight: 500;
             text-align: center;
-            padding: 8px 0;
-            width: 180px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            padding: 12px 0 20px 0;
+            width: 200px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
             clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
             -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
-            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            display: block;
+            line-height: 1.4;
         }
+        
         #memorial-ribbon:hover {
-            background: #333;
-            padding-top: 10px;
+            background: #222222;
+            padding-top: 14px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
         }
+        
+        #memorial-ribbon:active {
+            background: #111111;
+        }
+        
+        .ribbon-text {
+            display: block;
+            font-size: 15px;
+            padding: 2px 0;
+        }
+        
+        .ribbon-year {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 2px 0;
+            margin-top: 2px;
+        }
+        
         @media (max-width: 768px) {
-            #memorial-ribbon { width: 160px; font-size: 13px; }
+            #memorial-ribbon {
+                width: 160px;
+                padding: 10px 0 16px 0;
+            }
+            .ribbon-text { font-size: 13px; }
+            .ribbon-year { font-size: 14px; }
+            #memorial-ribbon:hover { padding-top: 12px; }
+        }
+        
+        /* استایل دمو */
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: 'Vazir', Tahoma;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #000;
+            padding-bottom: 10px;
+        }
+        .code-block {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
+    <!-- نوار یادبود -->
     <a href="https://m4tinbeigi-official.github.io/memorial-ribbon/" 
        id="memorial-ribbon" 
-       target="_blank">
-        به یاد درگذشتگان دی ۱۴۰۴
+       target="_blank"
+       rel="noopener noreferrer"
+       title="یادبود درگذشتگان دی ۱۴۰۴"
+       aria-label="نوار یادبود دی ۱۴۰۴">
+        <span class="ribbon-text">به یاد درگذشتگان</span>
+        <span class="ribbon-year">دی ۱۴۰۴</span>
     </a>
-    <!-- محتوای سایت شما -->
+    
+    <!-- محتوای دمو -->
+    <div class="container">
+        <h1>نمایش دمو: نوار یادبود سمت راست</h1>
+        <p>این یک صفحه دمو است که نوار یادبود دی ۱۴۰۴ را در گوشه راست بالا نمایش می‌دهد.</p>
+        
+        <h2>🎯 نحوه استفاده در سایت شما:</h2>
+        <p>کد زیر را در بخش <code>&lt;body&gt;</code> سایت خود قرار دهید:</p>
+        
+        <div class="code-block" id="codeToCopy">
+&lt;!-- نوار یادبود دی ۱۴۰۴ --&gt;
+&lt;a href="https://m4tinbeigi-official.github.io/memorial-ribbon/" 
+   id="memorial-ribbon" 
+   target="_blank"
+   rel="noopener noreferrer"
+   title="یادبود درگذشتگان دی ۱۴۰۴"
+   aria-label="نوار یادبود دی ۱۴۰۴"&gt;
+    &lt;span class="ribbon-text"&gt;به یاد درگذشتگان&lt;/span&gt;
+    &lt;span class="ribbon-year"&gt;دی ۱۴۰۴&lt;/span&gt;
+&lt;/a&gt;
+
+&lt;style&gt;
+    #memorial-ribbon {
+        position: fixed;
+        top: 0;
+        right: 0;
+        right: -1px;
+        z-index: 999999;
+        background: #000000;
+        color: #ffffff;
+        text-decoration: none;
+        font-family: 'Vazir', Tahoma, sans-serif;
+        font-weight: 500;
+        text-align: center;
+        padding: 12px 0 20px 0;
+        width: 200px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+        transition: all 0.3s ease;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+        cursor: pointer;
+    }
+    #memorial-ribbon:hover {
+        background: #222222;
+        padding-top: 14px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    }
+    .ribbon-text {
+        display: block;
+        font-size: 15px;
+        padding: 2px 0;
+    }
+    .ribbon-year {
+        display: block;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 2px 0;
+        margin-top: 2px;
+    }
+    @media (max-width: 768px) {
+        #memorial-ribbon {
+            width: 160px;
+            padding: 10px 0 16px 0;
+        }
+        .ribbon-text { font-size: 13px; }
+        .ribbon-year { font-size: 14px; }
+        #memorial-ribbon:hover { padding-top: 12px; }
+    }
+&lt;/style&gt;
+
+&lt;!-- بارگذاری فونت وزیر --&gt;
+&lt;link rel="stylesheet" href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css"&gt;
+        </div>
+        
+        <button onclick="copyCode()" style="background: #000; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-family: 'Vazir'; margin-bottom: 20px;">
+            📋 کپی کد
+        </button>
+        
+        <p>برای نسخه سمت چپ، به <a href="ribbon-left.html">این صفحه</a> مراجعه کنید.</p>
+    </div>
+    
+    <script>
+        function copyCode() {
+            const codeBlock = document.getElementById('codeToCopy');
+            const textArea = document.createElement('textarea');
+            textArea.value = codeBlock.innerText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = '✅ کپی شد!';
+            button.style.background = '#4CAF50';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '#000';
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
