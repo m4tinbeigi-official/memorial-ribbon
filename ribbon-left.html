@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css');
+        #memorial-ribbon {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            z-index: 999999;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 8px;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-family: 'Vazir', tahoma;
+            font-size: 15px;
+            font-weight: 500;
+            transform: translateY(-50%);
+            transition: 0.3s;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            min-height: 180px;
+        }
+        #memorial-ribbon:hover {
+            background: #222;
+            padding-left: 12px;
+        }
+        @media (max-width: 768px) {
+            #memorial-ribbon { font-size: 13px; min-height: 150px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="https://github.com/username/memorial-ribbon" 
+       id="memorial-ribbon" 
+       target="_blank"
+       aria-label="یادبود درگذشتگان دی ۱۴۰۴">
+        به یاد درگذشتگان دی ۱۴۰۴
+    </a>
+</body>
+</html>
