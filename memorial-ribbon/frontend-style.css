@@ -1,0 +1,45 @@
+@import url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css');
+
+.memorial-ribbon {
+    position: fixed;
+    top: 0;
+    z-index: 999999;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Vazir', tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    padding: 8px 0;
+    width: 180px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    /* ایجاد شکل سه‌گوش با clip-path */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+}
+
+.memorial-ribbon:hover {
+    background-color: #333;
+    padding-top: 10px;
+}
+
+/* حالت سمت راست */
+.memorial-ribbon.right-side {
+    right: 0;
+    transform: rotate(0deg);
+}
+
+/* حالت سمت چپ */
+.memorial-ribbon.left-side {
+    left: 0;
+    transform: rotate(0deg);
+}
+
+@media (max-width: 768px) {
+    .memorial-ribbon {
+        width: 160px;
+        font-size: 13px;
+    }
+}
