@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نوار یادبود دی ۱۴۰۴ - پروژه همبستگی</title>
+    <link rel="stylesheet" href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Vazir', tahoma, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f9f9f9;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #000;
+            color: #fff;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        h2 { color: #444; border-bottom: 2px solid #000; padding-bottom: 8px; margin: 25px 0 15px; }
+        .container { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .download-box {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-right: 5px solid #000;
+        }
+        code {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            display: block;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+        .btn {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #333; }
+        .demo-ribbon {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            background: #000;
+            color: #fff;
+            padding: 12px 6px;
+            writing-mode: vertical-rl;
+            font-family: 'Vazir';
+            border-radius: 0 8px 8px 0;
+            text-decoration: none;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            h1 { font-size: 1.8rem; }
+            .container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- نوار دمو (قابل حذف) -->
+    <a href="#github" class="demo-ribbon">به یاد درگذشتگان دی ۱۴۰۴</a>
+
+    <header>
+        <h1>نوار یادبود دی ۱۴۰۴</h1>
+        <p>پروژه‌ای برای نمایش همبستگی و یادبود درگذشتگان</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>📋 درباره پروژه</h2>
+            <p>این پروژه شامل یک نوار مشکی ساده و محترمانه است که با متن <strong>"به یاد درگذشتگان دی ۱۴۰۴"</strong> به صورت عمودی در کنار سایت نمایش داده می‌شود.</p>
+            <p>هدف: ایجاد یک نماد همبستگی دیجیتال که به سادگی در هر سایتی قابل اضافه شدن باشد.</p>
+        </section>
+
+        <section>
+            <h2>⚙️ روش‌های نصب</h2>
+            
+            <div class="download-box">
+                <h3>روش ۱: پلاگین وردپرس (توصیه شده برای سایت‌های وردپرسی)</h3>
+                <p>پلاگین با قابلیت تنظیم موقعیت از پیشخوان وردپرس.</p>
+                <a href="https://github.com/username/memorial-ribbon/archive/refs/heads/main.zip" class="btn">دانلود پلاگین (ZIP)</a>
+                <a href="#wordpress-install" class="btn">راهنمای نصب</a>
+            </div>
+
+            <div class="download-box">
+                <h3>روش ۲: کد مستقیم برای سایت‌های غیروردپرسی</h3>
+                <p>کدهای آماده برای قرار دادن در هر سایتی:</p>
+                <a href="ribbon-right.html" class="btn">کد نسخه سمت راست</a>
+                <a href="ribbon-left.html" class="btn">کد نسخه سمت چپ</a>
+            </div>
+        </section>
+
+        <section id="wordpress-install">
+            <h2>📥 راهنمای نصب پلاگین وردپرس</h2>
+            <ol>
+                <li>فایل زیپ پلاگین را از لینک بالا دانلود کنید.</li>
+                <li>در پیشخوان وردپرس به مسیر <strong>افزونه‌ها > افزودن جدید > آپلود افزونه</strong> بروید.</li>
+                <li>فایل زیپ را آپلود و نصب کنید، سپس افزونه را فعال نمایید.</li>
+                <li>به <strong>تنظیمات > نوار یادبود</strong> بروید و موقعیت مورد نظر (چپ/راست) را انتخاب کنید.</li>
+                <li>نوار به طور خودکار در سایت شما نمایش داده می‌شود.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>📄 ساختار پروژه در گیت‌هاب</h2>
+            <pre>
+memorial-ribbon/
+├── memorial-ribbon.php          # فایل اصلی پلاگین
+├── admin-settings.php           # تنظیمات پیشخوان
+├── frontend-style.css           # استایل نوار
+├── ribbon-right.html            # کد نسخه راست
+├── ribbon-left.html             # کد نسخه چپ
+├── index.html                   # همین صفحه معرفی
+└── README.md                    # مستندات پروژه
+            </pre>
+        </section>
+
+        <section>
+            <h2>🔗 لینک‌های پروژه</h2>
+            <p>
+                <a href="https://github.com/username/memorial-ribbon" class="btn" id="github">مخزن گیت‌هاب</a>
+                <a href="https://github.com/username/memorial-ribbon/issues" class="btn">گزارش مشکل</a>
+                <a href="https://github.com/username/memorial-ribbon/wiki" class="btn">ویکی پروژه</a>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>پروژه نوار یادبود دی ۱۴۰۴ - با احترام و برای یادبود</p>
+        <p>© ۱۴۰۴ - این پروژه متن‌باز و تحت مجوز MIT منتشر می‌شود.</p>
+    </footer>
+</body>
+</html>
